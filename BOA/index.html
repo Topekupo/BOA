@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of America - Wire Transfer</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://download.logo.wine/logo/Bank_of_America/Bank_of_America-Logo.wine.png" alt="Bank of America Logo" class="logo">
+            <h1>Online Wire Transfer</h1>
+        </header>
+        <main>
+            <form id="wireTransferForm">
+                <div class="form-group">
+                    <label for="fromAccount">From Account</label>
+                    <select id="fromAccount" name="fromAccount" required>
+                        <option value="">Select an account</option>
+                        <option value="123456789">Checking - 823245438</option>
+                        <option value="987654321">Savings - 784324301</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="toAccount">To Account</label>
+                    <input type="text" id="toAccount" name="toAccount" placeholder="Enter recipient's account number" required>
+                </div>
+                <div class="form-group">
+                    <label for="routingNumber">Routing Number</label>
+                    <input type="text" id="routingNumber" name="routingNumber" placeholder="Enter routing number" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="currency">Currency</label>
+                    <select id="currency" name="currency" required>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" placeholder="Optional notes"></textarea>
+                </div>
+                <div id="error-message" class="error-message"></div> <!-- Error message container -->
+                <button type="submit" class="submit-btn">Submit Wire Transfer</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2023 Bank of America Corporation. All rights reserved.</p>
+        </footer>
+
+          <!-- Success Page (Hidden by Default) -->
+          <div id="successPage" class="success-page" style="display: none;">
+            <header>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9byC4Xjuz9cZwpZ6A__4emUYFRN8KDGHCrg&s" alt="Bank of America Logo" class="logo">
+                <h1>Wire Transfer Successful</h1>
+            </header>
+            <main>
+                <div class="success-message">
+                    <p>Your wire transfer has been successfully submitted.</p>
+                    <p>The transfer will reach the recipient in the next <strong>5 minutes</strong>.</p>
+                </div>
+                <div class="transfer-details">
+                    <h2>Transfer Details</h2>
+                    <p><strong>From Account:</strong> <span id="successFromAccount"></span></p>
+                    <p><strong>To Account:</strong> <span id="successToAccount"></span></p>
+                    <p><strong>Routing Number:</strong> <span id="successRoutingNumber"></span></p>
+                    <p><strong>Amount:</strong> <span id="successAmount"></span> <span id="successCurrency"></span></p>
+                    <p><strong>Notes:</strong> <span id="successNotes"></span></p>
+                </div>
+                <button onclick="window.location.reload()" class="submit-btn">Make Another Transfer</button>
+            </main>
+        </div>
+
+        
+    </div>
+    <script src="script.js"></script> <!-- Include JavaScript file -->
+</body>
+</html>
